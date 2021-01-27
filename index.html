@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+        <link rel="stylesheet" href="./css/style.css">
+         <title>Slider</title>
+         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    </head>
+    <body>
+        <div id="slider">
+
+          <div class="container">
+            <div class="slider-wrapper">
+                <div class="prev">
+                    <i class="fas fa-angle-left" @click="prev">prev</i>
+                </div>
+                <div class="images">
+                    <img class="active" :src='img[imagesIDX]'>
+
+                </div>
+                <div class="next">
+                    <i class="fas fa-angle-right"@click="next" >next</i>
+                </div>
+                <div class="nav">
+                    <i :class="isActive(i)" v-for="(imagesIDX, i) in img.length" @click="changeImage(i)"></i>
+
+            </div>
+          </div>
+        </div>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>
